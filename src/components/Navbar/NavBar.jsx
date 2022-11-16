@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaMugHot, FaShoppingCart } from 'react-icons/fa';
+import { FaMugHot, FaShoppingCart, FaStar, FaHeart } from 'react-icons/fa';
+import { BsBagCheckFill } from 'react-icons/bs';
+
 
 import {
   Collapse,
@@ -70,22 +72,12 @@ const NavBar = () => {
                 >
                   Contact
                 </NavLink>
-              {isAuthenticated && (
-                <NavItem>
-                  <NavLink
-                    tag={RouterNavLink}
-                    to="/external-api"
-                    exact
-                    activeClassName="router-link-exact-active"
-                  >
-                    External API
-                  </NavLink>
-                </NavItem>
-              )}
             </Nav>
+
             <NavbarBrand >
               <FaShoppingCart />
             </NavbarBrand>
+
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
@@ -119,6 +111,34 @@ const NavBar = () => {
                     >
                       <FontAwesomeIcon icon="user" className="mr-3" /> Profile
                     </DropdownItem>
+
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to="/orders"
+                      className="dropdown-profile"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <BsBagCheckFill className="mr-3" /> Orders
+                    </DropdownItem>
+
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to="/rewards"
+                      className="dropdown-profile"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <FaStar className="mr-3" /> Rewards
+                    </DropdownItem>
+
+                    <DropdownItem
+                      tag={RouterNavLink}
+                      to="/favorites"
+                      className="dropdown-profile"
+                      activeClassName="router-link-exact-active"
+                    >
+                      <FaHeart className="mr-3" /> Favorites
+                    </DropdownItem>
+
                     <DropdownItem
                       id="qsLogoutBtn"
                       onClick={() => logoutWithRedirect()}
@@ -129,6 +149,7 @@ const NavBar = () => {
                   </DropdownMenu>
                 </UncontrolledDropdown>
               )}
+
             </Nav>
             {!isAuthenticated && (
               <Nav className="d-md-none" navbar>
