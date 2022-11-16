@@ -4,12 +4,11 @@ import logo from "../assets/logo.svg";
 
 const Hero = () => (
   <div className="text-center hero my-5">
-    <img className="mb-3 app-logo" src={logo} alt="React logo" width="120" />
-    <h1 className="mb-4">React.js Sample Project</h1>
+    <h1 className="mb-4">Enjoy the teatime</h1>
+    <h1 className="mb-4">Enjoy your life</h1>
 
     <p className="lead">
-      This is a sample application that demonstrates an authentication flow for
-      an SPA, using <a href="https://reactjs.org">React.js</a>
+      Fuzzy Search Menu
     </p>
   </div>
 );

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { FaMugHot, FaShoppingCart } from 'react-icons/fa';
+import { Space } from 'antd';
 
 import {
   Collapse,
@@ -39,11 +41,12 @@ const NavBar = () => {
     <div className="nav-container">
       <Navbar color="light" light expand="md">
         <Container>
-          <NavbarBrand className="logo" />
+          <NavbarBrand style={{
+            paddingTop: '0px'
+          }}><FaMugHot/ ></NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <NavItem>
                 <NavLink
                   tag={RouterNavLink}
                   to="/"
@@ -52,7 +55,22 @@ const NavBar = () => {
                 >
                   Home
                 </NavLink>
-              </NavItem>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  Menu
+                </NavLink>
+                <NavLink
+                  tag={RouterNavLink}
+                  to="/"
+                  exact
+                  activeClassName="router-link-exact-active"
+                >
+                  Contact
+                </NavLink>
               {isAuthenticated && (
                 <NavItem>
                   <NavLink
@@ -66,6 +84,9 @@ const NavBar = () => {
                 </NavItem>
               )}
             </Nav>
+            <NavbarBrand >
+              <FaShoppingCart />
+            </NavbarBrand>
             <Nav className="d-none d-md-block" navbar>
               {!isAuthenticated && (
                 <NavItem>
@@ -75,7 +96,7 @@ const NavBar = () => {
                     className="btn-margin"
                     onClick={() => loginWithRedirect()}
                   >
-                    Log in
+                    Sign in/Join now
                   </Button>
                 </NavItem>
               )}

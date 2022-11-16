@@ -1,10 +1,15 @@
 import React from "react";
+import { FaMugHot } from 'react-icons/fa';
+import { BsInstagram, BsTwitter } from "react-icons/bs";
 
 const Footer = () => (
   <footer className="bg-light p-3 text-center">
-    <div className="logo" />
+    <FaMugHot />
     <p>
-      Sample project provided by <a href="https://auth0.com">Auth0</a>
+      Share your tea time with us!
+    </p>
+    <p>
+      Social: <BsInstagram /> <BsTwitter />
     </p>
   </footer>
 );
