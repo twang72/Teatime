@@ -12,6 +12,10 @@ import Profile from "./views/ProfilePage/Profile";
 import Orders from "./views/OrdersPage/Orders"
 import Rewards from "./views/RewardsPage/Rewards"
 import Favorites from "./views/FavoritesPage/Favorites"
+import Coffee from "../src/components/CategoryPages/Coffee"
+import Milktea from "../src/components/CategoryPages/Milktea"
+import Tea from "../src/components/CategoryPages/Tea"
+import Smoothies from "../src/components/CategoryPages/Smoothies"
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 
@@ -46,6 +50,10 @@ const App = () => {
             <Route path="/orders" component={Orders} />
             <Route path="/rewards" component={Rewards} />
             <Route path="/favorites" component={Favorites} />
+            <Route path="/categories/coffee" component={Coffee}/>
+            <Route path="/categories/milktea" component={Milktea}/>
+            <Route path="/categories/tea" component={Tea}/>
+            <Route path="/categories/smoothies" component={Smoothies}/>
           </Switch>
         </Container>
         <Footer />
