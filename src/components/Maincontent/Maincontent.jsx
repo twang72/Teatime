@@ -1,4 +1,6 @@
 import React from "react";
+import Searchbar from "../Searchbar/Searchbar"
+import {Button} from "reactstrap";
 
 const Maincontent = () => (
   <div className="text-center hero my-5">
@@ -6,7 +8,12 @@ const Maincontent = () => (
     <h1 className="mb-4">Enjoy your life</h1>
 
     <p className="lead">
-      Fuzzy Search Menu
+    <Searchbar />
+    <Button
+      color="primary"
+      className="btn-margin">
+      Order Now!
+    </Button>
     </p>
   </div>
 );

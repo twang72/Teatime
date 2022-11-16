@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FaMugHot, FaShoppingCart } from 'react-icons/fa';
-import { Space } from 'antd';
 
 import {
   Collapse,
