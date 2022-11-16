@@ -5,7 +5,7 @@ import { Container } from "reactstrap";
 import Loading from "./components/Loading";
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Home from "./views/HomePage/index";
+import Home from "./views/homepage/index";
 import Menu from "./views/MenuPage/Menu"
 import Contact from "./views/ContactPage/Contact"
 import Profile from "./views/ProfilePage/Profile";
