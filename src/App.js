@@ -8,8 +8,10 @@ import Footer from "./components/Footer/Footer";
 import Home from "./views/HomePage/index";
 import Menu from "./views/MenuPage/Menu"
 import Contact from "./views/ContactPage/Contact"
-import Profile from "./views/Profile";
-import ExternalApi from "./views/ExternalApi";
+import Profile from "./views/ProfilePage/Profile";
+import Orders from "./views/OrdersPage/Orders"
+import Rewards from "./views/RewardsPage/Rewards"
+import Favorites from "./views/FavoritesPage/Favorites"
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 
@@ -41,7 +43,9 @@ const App = () => {
             <Route path="/menu" exact component={Menu} />
             <Route path="/contact" exact component={Contact} />
             <Route path="/profile" component={Profile} />
-            <Route path="/external-api" component={ExternalApi} />
+            <Route path="/orders" component={Orders} />
+            <Route path="/rewards" component={Rewards} />
+            <Route path="/favorites" component={Favorites} />
           </Switch>
         </Container>
         <Footer />
