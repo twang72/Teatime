@@ -1,5 +1,5 @@
 {
   "domain": "dev-lmrdbkdstukzous5.us.auth0.com",
-  "clientId": "QEkiE2zswLGVBlrb6zTO0abVMd3Izn7u",
-  "audience": "YOUR_API_IDENTIFIER"
+  "clientId": "gwYZyUvfTklrWjmAVKiEyqjrWvzfCWeu",
+  "audience": "https://dev-lmrdbkdstukzous5.us.auth0.com/api/v2/"
 }

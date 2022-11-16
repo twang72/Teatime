@@ -6,14 +6,14 @@ import { BiCopyright } from "react-icons/bi";
 const Footer = () => (
   <footer className="bg-light p-3 text-center">
     <FaMugHot />
-    <p>
+    <div>
       Share your tea time with us!
-    </p>
-    <p>
+    </div>
+    <div>
       Social: <BsInstagram /> <BsTwitter />
-    </p>
+    </div>
     <hr />
-    <p>Copyright <BiCopyright /> Teatime 2022</p>
+    <div>Copyright <BiCopyright /> Teatime 2022</div>
   </footer>
 );
 
