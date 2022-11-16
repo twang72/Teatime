@@ -56,7 +56,7 @@ const NavBar = () => {
                 </NavLink>
                 <NavLink
                   tag={RouterNavLink}
-                  to="/"
+                  to="/menu"
                   exact
                   activeClassName="router-link-exact-active"
                 >
@@ -64,7 +64,7 @@ const NavBar = () => {
                 </NavLink>
                 <NavLink
                   tag={RouterNavLink}
-                  to="/"
+                  to="/contact"
                   exact
                   activeClassName="router-link-exact-active"
                 >

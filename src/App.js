@@ -5,7 +5,9 @@ import { Container } from "reactstrap";
 import Loading from "./components/Loading";
 import NavBar from "./components/Navbar/NavBar";
 import Footer from "./components/Footer/Footer";
-import Home from "./views/homepage/index";
+import Home from "./views/HomePage/index";
+import Menu from "./views/MenuPage/Menu"
+import Contact from "./views/ContactPage/Contact"
 import Profile from "./views/Profile";
 import ExternalApi from "./views/ExternalApi";
 import { useAuth0 } from "@auth0/auth0-react";
@@ -36,6 +38,8 @@ const App = () => {
         <Container className="flex-grow-1 mt-5">
           <Switch>
             <Route path="/" exact component={Home} />
+            <Route path="/menu" exact component={Menu} />
+            <Route path="/contact" exact component={Contact} />
             <Route path="/profile" component={Profile} />
             <Route path="/external-api" component={ExternalApi} />
           </Switch>
