@@ -1,9 +1,9 @@
 import React, { Fragment } from "react";
 
-const Menu = () => (
+const ShoppingCart = () => (
   <Fragment>
     Your Shopping Cart:
   </Fragment>
 );
 
-export default Menu;
+export default ShoppingCart;
