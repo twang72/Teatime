@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 
 const Coffee = () => (
+
   <Fragment>
     <div>
-        Categories / Coffee
+        <a href={`/menu`}>Categories</a> / Coffee
     </div>
   </Fragment>
 );
