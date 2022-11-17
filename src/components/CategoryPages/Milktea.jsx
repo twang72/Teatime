@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const Milktea = () => (
   <Fragment>
     <div>
-        Categories / Milktea
+    <a href={`/menu`}>Categories</a> / Milktea
     </div>
   </Fragment>
 );

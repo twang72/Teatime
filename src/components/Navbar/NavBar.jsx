@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { FaMugHot, FaShoppingCart, FaStar, FaHeart } from 'react-icons/fa';
+import { FaMugHot, FaStar, FaHeart } from 'react-icons/fa';
 import { BsBagCheckFill } from 'react-icons/bs';
+import Cart from '../Cart';
 
 
 import {
@@ -44,38 +45,44 @@ const NavBar = () => {
         <Container>
           <NavbarBrand style={{
             paddingTop: '0px'
-          }}><FaMugHot/ ></NavbarBrand>
+          }}><FaMugHot /></NavbarBrand>
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/"
-                  exact
-                  activeClassName="router-link-exact-active"
-                >
-                  Home
-                </NavLink>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/menu"
-                  exact
-                  activeClassName="router-link-exact-active"
-                >
-                  Menu
-                </NavLink>
-                <NavLink
-                  tag={RouterNavLink}
-                  to="/contact"
-                  exact
-                  activeClassName="router-link-exact-active"
-                >
-                  Contact
-                </NavLink>
+              <NavLink
+                tag={RouterNavLink}
+                to="/"
+                exact
+                activeClassName="router-link-exact-active"
+              >
+                Home
+              </NavLink>
+              <NavLink
+                tag={RouterNavLink}
+                to="/menu"
+                exact
+                activeClassName="router-link-exact-active"
+              >
+                Menu
+              </NavLink>
+              <NavLink
+                tag={RouterNavLink}
+                to="/contact"
+                exact
+                activeClassName="router-link-exact-active"
+              >
+                Contact
+              </NavLink>
             </Nav>
 
             <NavbarBrand >
-              <FaShoppingCart />
+              <NavLink
+                tag={RouterNavLink}
+                to="/shoppingcart"
+                activeClassName="selected"
+              >
+                <Cart />
+              </NavLink>
             </NavbarBrand>
 
             <Nav className="d-none d-md-block" navbar>

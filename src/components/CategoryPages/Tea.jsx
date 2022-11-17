@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 const Tea = () => (
   <Fragment>
     <div>
-        Categories /Tea
+    <a href={`/menu`}>Categories</a> /Tea
     </div>
   </Fragment>
 );
