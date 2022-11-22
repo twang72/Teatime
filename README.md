@@ -1,105 +1,75 @@
-# Auth0 React SDK Sample Application
+# CS 5610 Project Proposal - Teatime
 
-This sample demonstrates the integration of [Auth0 React SDK](https://github.com/auth0/auth0-react) into a React application created using [create-react-app](https://reactjs.org/docs/create-a-new-react-app.html). The sample is a companion to the [Auth0 React SDK Quickstart](https://auth0.com/docs/quickstart/spa/react).
+## Clarify your target audience (Jieyu)
+### What are your application users' needs and pain points?
+Our application's target users are people who love tea and have a preference for tea drinks with caffeine or milk. 
 
-This sample demonstrates the following use cases:
+Users’ Needs:
+- Users want the drink stores to have delivery services so that they can order the drinks they like online from the drinks stores directly,  easily, and smoothly. A web application that enables them to place orders, track orders, and have favorites.
+- Users want to have a clear layout in this web application so that they can easily browse different kinds of drinks and the details about each drink. The customers, especially those who are on a diet, may need to know specific info such as ingredients and nutrition.
+- Users want to save money. Most customers would love to have a promotion when they buy products and also it would be better if there is a reward mechanism provided to loyalty customers.
 
-- [Login](https://github.com/auth0-samples/auth0-react-samples/blob/master/Sample-01/src/components/NavBar.js#L72-L79)
-- [Logout](https://github.com/auth0-samples/auth0-react-samples/blob/master/Sample-01/src/components/NavBar.js#L102-L108)
-- [Showing the user profile](https://github.com/auth0-samples/auth0-react-samples/blob/master/Sample-01/src/views/Profile.js)
-- [Protecting routes](https://github.com/auth0-samples/auth0-react-samples/blob/master/Sample-01/src/views/Profile.js#L33)
-- [Calling APIs](https://github.com/auth0-samples/auth0-react-samples/blob/master/Sample-01/src/views/ExternalApi.js)
+Pain Points:
+The customers will actually have to pay much more to place orders through food delivery apps than they buy drinks at stores in person. Many drinks stores do not provide food delivery service directly, so the users will have to place orders through third party platforms such as UberEats and DoorDash. However, those food delivery apps usually charge 20-30% service fee from the Merchant and 10% service fee from the Customer. Most merchants will raise the product price to cover the 20-30 service fee that is charged by the food delivery Apps, which results in more cost for customers.
 
-## Project setup
+### What problem/task(s)/need does the application help the users address?
+To solve the needs as mentioned above, we develop an online website for the owner of a drinks store. Our application provides owners with these features:
 
-Use `npm` to install the project dependencies:
+- The straightforward style of website layout. Customers can get the category and search bar on the home page at first glance. They can browse the website to view each product and click that product to jump to a subpage with its related info, e.g. nutrition. Or they can use the search bar to find the desired product quickly.
+- Quickly placing an online order. Once logged in, the customer can choose different kinds of add-ons, sugar levels, ice levels and quantities on each product's page. Then the users can add it to the shopping cart and proceed to payment.
+- Membership management. The customer can create an account on the website. Account holders can save their favourite products, rank stars and write reviews on each product. The owner can provide promotions to loyal customers, such as buy 10 get one free.
 
-```bash
-npm install
-```
+## Do some competitor research to see what other people have done to solve similar problems and explain how your group application proposes to improve existing solutions - at least one feature should be either completely new OR an improvement on similar feature(s) of similar existing web applications. (Yichen)
 
-## Configuration
+An increasing number of people are considering opening their own independent drinks Stores. We aim to help these small business owners develop their own drinks  websites to compete with large franchise drink stores and manage the ordering system without using third-party food delivery platforms such as UberEats and DoorDash.
+We found the websites of three major franchise drink sellers in the Greater Vancouver Area and compared their features with ours as below:
 
-### Create an API
+<img width="597" alt="WechatIMG190" src="https://user-images.githubusercontent.com/113411833/203226131-ee310977-2bfd-42ab-9156-23315d46708e.png">
 
-For the ["call an API"](https://auth0.com/docs/quickstart/spa/react/02-calling-an-api) page to work, you will need to [create an API](https://auth0.com/docs/apis) using the [management dashboard](https://manage.auth0.com/#/apis). This will give you an API identifier that you can use in the `audience` configuration field below.
+Through comparisons, we found that all major competitors do not put product search and category functions in their homepage, only displaying them when users get to their online ordering pages. We understand they have plenty of drinking products and thus they’d like to display all products only on the menu page. However, as most independent sellers will focus on developing their signature drinks, we will integrate product search and category functions with the homepage so that customers can quickly find the products and purchase them online. In addition, we are strong believers that you are what you eat, which means we will add product calories to each drinking product and let users choose what they’d like to enjoy. However, due to the limited time we have for the development, we will only integrate a static store location page and not include product filters (product ranking) with this Beta version.
 
-If you do not wish to use an API or observe the API call working, you should not specify the `audience` value in the next step. Otherwise, you will receive a "Service not found" error when trying to authenticate.
+## Sketch the main pages and interactions between the user and the web application. (Xiyou)
+### Homepage before sign in/register:
+<img width="565" alt="WechatIMG158" src="https://user-images.githubusercontent.com/113411833/203226336-6d1a2733-571b-4fba-bf69-238c79846fca.png">
 
-### Configure credentials
+### Sign In Page:
+<img width="579" alt="WechatIMG174" src="https://user-images.githubusercontent.com/113411833/203226360-7e2570aa-6b0c-4b47-b364-58c97eb918e9.png">
 
-The project needs to be configured with your Auth0 domain and client ID in order for the authentication flow to work.
+### Homepage after sign in/register(fours selections while clicking user icon at top right):
+<img width="583" alt="WechatIMG180" src="https://user-images.githubusercontent.com/113411833/203226443-386674c3-24e4-4c47-9b45-d2bb2adb706f.png">
 
-To do this, first copy `src/auth_config.json.example` into a new file in the same folder called `src/auth_config.json`, and replace the values with your own Auth0 application credentials, and optionally the base URLs of your application and API:
+### User Profile Page:
+<img width="653" alt="WechatIMG176" src="https://user-images.githubusercontent.com/113411833/203226468-8c2ae573-ec10-4c16-b16e-cb330a05ad19.png">
 
-```json
-{
-  "domain": "{YOUR AUTH0 DOMAIN}",
-  "clientId": "{YOUR AUTH0 CLIENT ID}",
-  "audience": "{YOUR AUTH0 API_IDENTIFIER}",
-  "appOrigin": "{OPTIONAL: THE BASE URL OF YOUR APPLICATION (default: http://localhost:3000)}",
-  "apiOrigin": "{OPTIONAL: THE BASE URL OF YOUR API (default: http://localhost:3001)}"
-}
-```
+### Orders Page:
+<img width="806" alt="WechatIMG191" src="https://user-images.githubusercontent.com/113411833/203226502-115d801b-c2e3-47af-83b3-471a05623932.png">
 
-**Note**: Do not specify a value for `audience` here if you do not wish to use the API part of the sample.
+### Order Detail Page:
+<img width="580" alt="WechatIMG184" src="https://user-images.githubusercontent.com/113411833/203226548-f9fd9170-0d1f-4a77-b78d-7c6ce1be3293.png">
 
-## Run the sample
+### User’s  Rewards Page(Once 10 stars are lighten up, user can redeem 1 free drink):
+<img width="693" alt="WechatIMG179" src="https://user-images.githubusercontent.com/113411833/203226591-d7bd5fb8-171a-4c10-8b3c-3776978d42cc.png">
 
-### Compile and hot-reload for development
+### User’s Favorites Page:
+<img width="669" alt="WechatIMG177" src="https://user-images.githubusercontent.com/113411833/203226626-79923bf0-a440-40df-8d46-2d4768a8c294.png">
 
-This compiles and serves the React app and starts the backend API server on port 3001.
+### Menu page - Categories: 
+<img width="742" alt="WechatIMG160" src="https://user-images.githubusercontent.com/113411833/203226650-4c38a173-1641-42e5-85d1-900cec2540a3.png">
 
-```bash
-npm run dev
-```
+### Categories Page - Tea:
+<img width="538" alt="WechatIMG164" src="https://user-images.githubusercontent.com/113411833/203226685-14e834a5-7283-4f21-ac86-610f075e9aaa.png">
 
-## Deployment
+### Product Detail Page - Oolong tea:
+<img width="536" alt="WechatIMG165" src="https://user-images.githubusercontent.com/113411833/203226704-832c8cfc-fd9c-406b-ad66-c71e1240d126.png">
 
-### Compiles and minifies for production
+### Shopping Cart Page - Checkout Step 1/2:
+<img width="608" alt="WechatIMG166" src="https://user-images.githubusercontent.com/113411833/203226733-2c801112-c438-4eed-a704-703985e3557c.png">
 
-```bash
-npm run build
-```
+### Shopping Cart Page - Checkout Step 2/2:
+<img width="663" alt="WechatIMG167" src="https://user-images.githubusercontent.com/113411833/203226784-24257866-ed2d-45ee-9cf1-110b6326dcfc.png">
 
-### Docker build
+### Order Summary Page:
+<img width="728" alt="WechatIMG168" src="https://user-images.githubusercontent.com/113411833/203226816-b6acd9f3-ed46-4338-98c5-4aefeb7ffe7a.png">
 
-To build and run the Docker image, run `exec.sh`, or `exec.ps1` on Windows.
-
-### Run your tests
-
-```bash
-npm run test
-```
-
-## Frequently Asked Questions
-
-If you're having issues running the sample applications, including issues such as users not being authenticated on page refresh, please [check the auth0-react FAQ](https://github.com/auth0/auth0-react/blob/master/FAQ.md).
-
-## What is Auth0?
-
-Auth0 helps you to:
-
-* Add authentication with [multiple sources](https://auth0.com/docs/identityproviders), either social identity providers such as **Google, Facebook, Microsoft Account, LinkedIn, GitHub, Twitter, Box, Salesforce** (amongst others), or enterprise identity systems like **Windows Azure AD, Google Apps, Active Directory, ADFS, or any SAML Identity Provider**.
-* Add authentication through more traditional **[username/password databases](https://auth0.com/docs/connections/database/custom-db)**.
-* Add support for **[linking different user accounts](https://auth0.com/docs/users/user-account-linking)** with the same user.
-* Support for generating signed [JSON Web Tokens](https://auth0.com/docs/tokens/json-web-tokens) to call your APIs and **flow the user identity** securely.
-* Analytics of how, when, and where users are logging in.
-* Pull data from other sources and add it to the user profile through [JavaScript rules](https://auth0.com/docs/rules).
-
-## Create a Free Auth0 Account
-
-1. Go to [Auth0](https://auth0.com) and click **Sign Up**.
-2. Use Google, GitHub, or Microsoft Account to login.
-
-## Issue Reporting
-
-If you have found a bug or if you have a feature request, please report them at this repository issues section. Please do not report security vulnerabilities on the public GitHub issue tracker. The [Responsible Disclosure Program](https://auth0.com/responsible-disclosure-policy) details the procedure for disclosing security issues.
-
-## Author
-
-[Auth0](https://auth0.com)
-
-## License
-
-This project is licensed under the MIT license. See the [LICENSE](../LICENSE) file for more info.
+### Contact Page: 
+<img width="687" alt="WechatIMG169" src="https://user-images.githubusercontent.com/113411833/203226835-5bb39543-e1d7-4e5b-a2d3-0128fd59c40b.png">
