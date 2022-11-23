@@ -9,12 +9,10 @@ const ShoppingCart = ({ cart }) => {
     (acc, item) => acc + item.qty * item.price,
     0
   );
-  const tax = cart.reduce(
-    (acc, item) => acc + item.qty * 5,
-    0
-  )
-  const shipping = subtotal > 1000 ? 0 : tax;
-
+  
+  const shipping = 2;
+  const num = subtotal * 0.05;
+  const tax = num.toFixed(2);
   const totalPrice = subtotal + shipping;
   return (
     <Fragment>
@@ -45,6 +43,12 @@ const ShoppingCart = ({ cart }) => {
                   <b>Subtotal:</b>
                 </div>
                 <div>${subtotal}</div>
+              </div>
+              <div className="t_inner">
+                <div>
+                  <b>Tax:</b>
+                </div>
+                <div>${tax}</div>
               </div>
               <div className="t_inner">
                 <div>
