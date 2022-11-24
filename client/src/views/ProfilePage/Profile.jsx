@@ -6,7 +6,7 @@ import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 export const ProfileComponent = () => {
   const { user, isAuthenticated } = useAuth0();
-  
+
   /*
   return (
     <Container className="mb-5">
@@ -75,28 +75,36 @@ export const ProfileComponent = () => {
                 placeholder={user.family_name}
               />
             </FormGroup>
-         </Col>
+          </Col>
         </Row>
-        <FormGroup>
-          <label for="exampleAddress">
-            Email Address
-          </label>
-          <Input
-            id="exampleEmail"
-            name="emailAddress"
-            placeholder={user.email}
-          />
-        </FormGroup>
-        <FormGroup>
-          <label for="phoneNumber">
-            Phone Number
-          </label>
-          <Input
-            id="phoneNumber"
-            name="Phone Number"
-            placeholder={user.phone_number}
-          />
-        </FormGroup>
+
+        <Row>
+          <Col md={6}>
+            <FormGroup>
+              <label for="exampleAddress">
+                Email Address
+              </label>
+              <Input
+                id="exampleEmail"
+                name="emailAddress"
+                placeholder={user.email}
+              />
+            </FormGroup>
+          </Col>
+          <Col md={6}>
+            <FormGroup>
+              <label for="phoneNumber">
+                Phone Number
+              </label>
+              <Input
+                id="phoneNumber"
+                name="Phone Number"
+                placeholder={user.phone_number}
+              />
+            </FormGroup>
+          </Col>
+        </Row>
+
         <FormGroup>
           <label for="location">
             Location
@@ -107,7 +115,7 @@ export const ProfileComponent = () => {
             placeholder={user.locale}
           />
         </FormGroup>
-        <Button className="mb-4 mt-3"> 
+        <Button className="mb-4 mt-3">
           Update the Profile
         </Button>
       </Form>
